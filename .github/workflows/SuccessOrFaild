@@ -1,0 +1,24 @@
+name: SuccessOrFaild
+
+on:
+  workflow_dispatch:
+    inputs:
+      isSuccess:
+        description: 'trueの場合、ワークフローは成功します。falseの場合、失敗します。'
+        default: true
+        required: true
+        type: boolean
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: success
+      if: inputs.isSuccess == true
+      run: echo "Success!"
+    - name: failed
+      if: inputs.isSuccess == false
+      run: |
+        echo "Failed!"\
+        exit 1
