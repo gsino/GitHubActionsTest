@@ -20,5 +20,5 @@ jobs:
     - name: failed
       if: inputs.isSuccess == false
       run: |
-        echo "Failed!"\
+        echo "Failed!"
         exit 1
