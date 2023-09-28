@@ -9,4 +9,4 @@ jobs:
       - name: callSuccessOrFailed.yml
         uses: gsino/GitHubActionsTest/.github/workflows/SuccessOrFaild.yml@master
         with:
-          isSuccess: true
+          isSuccess: ${{ true }}
